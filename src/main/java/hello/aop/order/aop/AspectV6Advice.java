@@ -61,3 +61,10 @@ public class AspectV6Advice {
 /* 실행순서 */
 // @Around , @Before , @After , @AfterReturning , @AfterThrowing 순
 // 호출순서와 리턴순서는 반대이다.
+
+// @Around 만으로 해결이 되는데, 왜 다른 어드바이스도 존재하는가?
+// @Around 는 타겟을 호출하지 않는다. 즉, 항상 joinPoint.proceed() 를 호출해야 한다.
+// 그 외에는 호출하지 않아도 된다. @Around 가 가장 넓은 기능을 제공하지만, 실수할 가능성이 존재한다.
+// 또한 어노테이션명에서 의도가 명확히 드러난다는 것이 큰 장점이다.
+
+// 좋은 설계란 제약이 있는 것이다. 명확한 의도가 표현되고 역할을 수행하는 것이 좋다.
