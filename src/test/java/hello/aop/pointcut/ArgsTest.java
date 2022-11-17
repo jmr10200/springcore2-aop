@@ -39,6 +39,7 @@ public class ArgsTest {
     /**
      * execution(* *(java.io.Serializable)) : 메소드의 시그니처로 판단 (정적)
      * args(java.io.Serializable) : 런타임에 전달된 인수로 판단 (동적)
+     * args 지시자는 단독사용보다는 파라미터 바인딩에서 주로 사용
      */
     @Test
     void argsVsExecution() {
@@ -52,6 +53,5 @@ public class ArgsTest {
         // 실패
         assertThat(pointcut("execution(* *(java.io.Serializable))").matches(helloMethod, MemberServiceImpl.class)).isFalse();
         assertThat(pointcut("execution(* *(Object))").matches(helloMethod, MemberServiceImpl.class)).isFalse();
-
     }
 }
