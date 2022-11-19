@@ -30,6 +30,7 @@ public class ThisTargetTest {
         memberService.hello("helloAA");
     }
 
+    // this, target 은 단독으로 사용되기보다 파라미터 바인딩에서 주로 사용
     @Aspect
     static class ThisTargetAspect {
 
